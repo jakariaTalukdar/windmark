@@ -27,99 +27,95 @@
       body { font-family: 'Poppins', sans-serif; }
       .sakura-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4zm-8 12l-3 1 1 3-3-1 1-3 3 1zm20 0l3 1-1 3 3-1-1-3-3 1zM20 35l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4 0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4zm20 0l2 2-2 2c-1 1-1 3-1 4 0 2 1 4 3 4s3-2 3-4c0-1 0-3-1-4l-2-2 2-2c1-1 1-3 1-4 0-2-1-4-3-4s-3 2-3 4c0 1 0 3 1 4z' fill='%239ca3af' fill-opacity='0.08'/%3E%3C/svg%3E"); }
       .sakura-pattern-dark { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4zm-8 12l-3 1 1 3-3-1 1-3 3 1zm20 0l3 1-1 3 3-1-1-3-3 1zM20 35l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4 0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4zm20 0l2 2-2 2c-1 1-1 3-1 4 0 2 1 4 3 4s3-2 3-4c0-1 0-3-1-4l-2-2 2-2c1-1 1-3 1-4 0-2-1-4-3-4s-3 2-3 4c0 1 0 3 1 4z' fill='%23e5e7eb' fill-opacity='0.06'/%3E%3C/svg%3E"); }
+      body.theme-soft { --tw-bg-opacity: 1; }
+      body.theme-soft .bg-darkest { background-color: #2d3748; }
     </style>
 </head>
-<body class="antialiased text-gray-800" x-data="{ quoteOpen: false, mobileMenu: false, sliderIndex: 0 }">
+<body class="antialiased text-gray-800" x-data="{ quoteOpen: false, mobileMenu: false, sliderIndex: 0, colorScheme: 'default' }" :class="colorScheme === 'soft' && 'theme-soft'">
     <!-- Top bar (Black Sakura style) -->
-    <div class="bg-darkest text-gray-400 text-center text-sm py-1.5 border-b border-borderorange sakura-pattern-dark">
-        www.windmark.com &gt; Home
-    </div>
-    <!-- Split Header: left light (logo + tagline), right dark (nav) -->
-    <header class="sticky top-0 z-50 flex border-b border-borderorange">
-        <div class="w-full lg:w-1/2 bg-gray-200 sakura-pattern flex items-center pl-6 lg:pl-12 py-4 lg:py-5">
+    
+    <!-- Split Header: both halves dark -->
+    <header class="sticky top-0 z-50 flex border-b border-borderorange bg-darkest sakura-pattern-dark">
+        <div class="w-full lg:w-1/2 flex items-center pl-6 lg:pl-12 py-4 lg:py-5">
             <a href="#" class="flex items-center">
                 <img src="public/logo.png" alt="Windmark" class="h-10 lg:h-12 w-auto object-contain">
             </a>
         </div>
-        <div class="hidden lg:flex lg:w-1/2 bg-darkest sakura-pattern-dark items-center justify-end pr-8 gap-6 py-4">
-            <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Home</a>
+        <div class="hidden lg:flex lg:w-1/2 items-center justify-end pr-6 gap-5 py-4">
+            <a href="#" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Home</a>
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
+                <button class="whitespace-nowrap flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
                     Product/Service
                     <svg class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-72 bg-white shadow-lg rounded py-3 border border-borderorange z-50 max-h-[80vh] overflow-y-auto">
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Machinery</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Primary Packaging</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Dairy products for Food Industry</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Basic Chemical for Textile Industry</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Intermediates</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Excipients</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Animal Health Products</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› N-Ethyl Glucomine</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Pheniramine Maleate</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Herbals</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Povidone Iodine</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Omeprazole Sodium Sterile</a>
-                    <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Pharmaceutical Raw Materials</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Oxytetracycline HCl</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Itraconazole Pellets</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Amoxicillin Sodium Sterile</a>
-                    <a href="#" class="block px-4 py-1.5 pl-6 text-sm text-borderorange hover:bg-orange-50">› Ceftriaxone Sodium (Sterile)</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Machinery</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Primary Packaging</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Dairy products for Food Industry</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Feed Raw Material</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Food Raw Material</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Basic Chemical for Textile Industry</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Excipients</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Herbals</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Pharmaceutical Raw Materials</a>
+                    <a href="#products" class="whitespace-nowrap block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Pharmaceutical Intermediates</a>
                 </div>
             </div>
-            <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
-            <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
+            <a href="#" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
+            <a href="#" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
+                <button class="whitespace-nowrap flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
                     Pages
                     <svg class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
-                <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-52 bg-white shadow-lg rounded py-0 border border-borderorange border-t-2 border-t-borderorange z-50">
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50">» Privacy & Policy</a>
-                    <a href="#" class="block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» About Us</a>
+                <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-56 bg-white shadow-lg rounded py-0 border border-borderorange border-t-2 border-t-borderorange z-50">
+                    <a href="#" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50">» Privacy & Policy</a>
+                    <a href="#about" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» About Us</a>
+                    <a href="#about" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» Mission & Vision</a>
+                    <a href="#about" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» Our Services</a>
+                    <a href="#about" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» Our Profile</a>
+                    <a href="#about" class="whitespace-nowrap block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» Message from MD/Chairman</a>
                 </div>
             </div>
-            <a href="#contact" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
-            <button @click="quoteOpen = true" class="bg-sky text-white px-4 py-2 rounded text-sm font-medium hover:bg-sky-600">Request a Quote</button>
+            <a href="#gallery" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Images/Video Gallery</a>
+            <a href="#contact" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
+            <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded text-sm font-medium hover:bg-sky-600">Request a Quote</button>
         </div>
-        <button @click="mobileMenu = !mobileMenu" class="lg:hidden ml-auto p-4 text-gray-700 bg-gray-200">☰</button>
+        <button @click="mobileMenu = !mobileMenu" class="lg:hidden ml-auto p-4 text-fglight">☰</button>
     </header>
-    <div x-show="mobileMenu" x-transition class="lg:hidden bg-gray-200 border-b border-borderorange py-4 px-6 space-y-1" x-data="{ productOpen: false }">
-        <a href="#" class="block py-2 text-gray-700">Home</a>
+    <div x-show="mobileMenu" x-transition class="lg:hidden bg-darkest border-b border-borderorange py-4 px-6 space-y-1 sakura-pattern-dark" x-data="{ productOpen: false }">
+        <a href="#" class="whitespace-nowrap block py-2 text-gray-300">Home</a>
         <div>
-            <button @click="productOpen = !productOpen" class="flex items-center justify-between w-full py-2 text-gray-700">Product/Service <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="productOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <button @click="productOpen = !productOpen" class="whitespace-nowrap flex items-center justify-between w-full py-2 text-gray-300">Product/Service <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="productOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
             <div x-show="productOpen" x-transition class="pl-3 border-l-2 border-borderorange space-y-0.5">
-                <a href="#" class="block py-1.5 text-gray-700">Machinery</a>
-                <a href="#" class="block py-1.5 text-gray-700">Primary Packaging</a>
-                <a href="#" class="block py-1.5 text-gray-700">Dairy products for Food Industry</a>
-                <a href="#" class="block py-1.5 text-gray-700">Basic Chemical for Textile Industry</a>
-                <a href="#" class="block py-1.5 text-gray-700">Intermediates</a>
-                <a href="#" class="block py-1.5 text-gray-700">Excipients</a>
-                <a href="#" class="block py-1.5 text-gray-700">Animal Health Products</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› N-Ethyl Glucomine</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Pheniramine Maleate</a>
-                <a href="#" class="block py-1.5 text-gray-700">Herbals</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Povidone Iodine</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Omeprazole Sodium Sterile</a>
-                <a href="#" class="block py-1.5 text-gray-700">Pharmaceutical Raw Materials</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Oxytetracycline HCl</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Itraconazole Pellets</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Amoxicillin Sodium Sterile</a>
-                <a href="#" class="block py-1 pl-4 text-sm text-gray-600">› Ceftriaxone Sodium (Sterile)</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Machinery</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Primary Packaging</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Dairy products for Food Industry</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Feed Raw Material</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Food Raw Material</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Basic Chemical for Textile Industry</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Excipients</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Herbals</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Pharmaceutical Raw Materials</a>
+                <a href="#products" class="whitespace-nowrap block py-1.5 text-gray-300">Pharmaceutical Intermediates</a>
             </div>
         </div>
-        <a href="#" class="block py-2 text-gray-700">Blog</a>
-        <a href="#" class="block py-2 text-gray-700">FAQ</a>
+        <a href="#blog" class="whitespace-nowrap block py-2 text-gray-300">Blog</a>
+        <a href="#faq" class="whitespace-nowrap block py-2 text-gray-300">FAQ</a>
         <div x-data="{ pagesOpen: false }">
-            <button @click="pagesOpen = !pagesOpen" class="flex items-center justify-between w-full py-2 text-gray-700">Pages <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="pagesOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <button @click="pagesOpen = !pagesOpen" class="whitespace-nowrap flex items-center justify-between w-full py-2 text-gray-300">Pages <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="pagesOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
             <div x-show="pagesOpen" x-transition class="pl-3 border-l-2 border-borderorange space-y-0.5">
-                <a href="#" class="block py-1.5 text-gray-700">» Privacy & Policy</a>
-                <a href="#" class="block py-1.5 text-gray-700">» About Us</a>
+                <a href="#" class="whitespace-nowrap block py-1.5 text-gray-300">» Privacy & Policy</a>
+                <a href="#about" class="whitespace-nowrap block py-1.5 text-gray-300">» About Us</a>
+                <a href="#about" class="whitespace-nowrap block py-1.5 text-gray-300">» Mission & Vision</a>
+                <a href="#about" class="whitespace-nowrap block py-1.5 text-gray-300">» Our Services</a>
+                <a href="#about" class="whitespace-nowrap block py-1.5 text-gray-300">» Our Profile</a>
+                <a href="#about" class="whitespace-nowrap block py-1.5 text-gray-300">» Message from MD/Chairman</a>
             </div>
         </div>
-        <a href="#contact" class="block py-2 text-gray-700">Contact Us</a>
-        <button @click="quoteOpen = true" class="bg-sky text-white px-4 py-2 rounded mt-2">Request a Quote</button>
+        <a href="#gallery" class="whitespace-nowrap block py-2 text-gray-300">Images/Video Gallery</a>
+        <a href="#contact" class="whitespace-nowrap block py-2 text-gray-300">Contact Us</a>
+        <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded mt-2">Request a Quote</button>
     </div>
 
     <!-- Full-width image slider (Black Sakura style) -->
@@ -147,6 +143,31 @@
         </div>
     </section>
 
+    <!-- About Us: Mission & Vision, Our Services, Our Profile, Message from MD/Chairman -->
+    <section id="about" class="py-16 lg:py-20 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-12">About Us</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h3 class="text-xl font-bold text-sky mb-3">Mission & Vision</h3>
+                    <p class="text-gray-400 text-sm">Our mission is to deliver quality products and services. Our vision is to be a trusted partner in the industry. Add your content here.</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h3 class="text-xl font-bold text-sky mb-3">Our Services</h3>
+                    <p class="text-gray-400 text-sm">We offer a full range of chemical and pharmaceutical solutions. Add your services description here.</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h3 class="text-xl font-bold text-sky mb-3">Our Profile</h3>
+                    <p class="text-gray-400 text-sm">Company profile and history. Add your content here.</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h3 class="text-xl font-bold text-sky mb-3">Message from MD/Chairman</h3>
+                    <p class="text-gray-400 text-sm">Message from Managing Director or Chairman. Add your content here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Two-column content: main (left) + sidebar (right) - Black Sakura pattern -->
     <section class="bg-gray-200 sakura-pattern py-12 lg:py-16 border-b border-borderorange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,7 +183,7 @@
                                 </div>
                                 <div class="flex gap-4 flex-col md:flex-row flex-wrap">
                                     <div class="md:w-32 md:h-24 flex-shrink-0 bg-gray-300 rounded border border-borderorange overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=200" alt="" class="w-full h-full object-cover">
+                                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=200" alt="" class="w-full h-full object-cover" loading="lazy">
                                     </div>
                                     <p class="text-gray-600 text-sm flex-1 min-w-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 </div>
@@ -186,17 +207,38 @@
         </div>
     </section>
 
-    <!-- Sub-feature cards (6) -->
+    <!-- Product/Services cards -->
     <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20 bg-darkest border-b border-borderorange">
+        <h2 class="text-2xl font-bold text-fglight text-center mb-8">Product / Services</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
-                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                <h3 class="font-semibold text-fglight mb-2">Pharmaceutical Raw Materials</h3>
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Machinery</h3>
                 <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
             </a>
             <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
-                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-                <h3 class="font-semibold text-fglight mb-2">Intermediates</h3>
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8 4-8-4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Primary Packaging</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Dairy products for Food Industry</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Feed Raw Material</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Food Raw Material</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Basic Chemical for Textile Industry</h3>
                 <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
             </a>
             <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
@@ -205,18 +247,18 @@
                 <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
             </a>
             <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
-                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <h3 class="font-semibold text-fglight mb-2">Animal Health Products</h3>
-                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
-            </a>
-            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
                 <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z"/></svg>
                 <h3 class="font-semibold text-fglight mb-2">Herbals</h3>
                 <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
             </a>
             <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
-                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <h3 class="font-semibold text-fglight mb-2">Primary Packaging</h3>
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Pharmaceutical Raw Materials</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Pharmaceutical Intermediates</h3>
                 <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
             </a>
         </div>
@@ -316,11 +358,26 @@
         </div>
     </section>
 
-    <!-- Our Customer -->
-    <section class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
+    <!-- Images/Video Gallery -->
+    <section id="gallery" class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-10">Images / Video Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Image</div></div>
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Image</div></div>
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Image</div></div>
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Video</div></div>
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Image</div></div>
+                <div class="aspect-video bg-gray-800 rounded border-2 border-borderorange overflow-hidden"><div class="w-full h-full bg-gray-700 flex items-center justify-center text-gray-500">Image</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Customer / Client list -->
+    <section id="clients" class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Case studies</p>
-            <h2 class="text-3xl lg:text-4xl font-bold text-fglight mt-2 mb-4">Our Customer</h2>
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight mt-2 mb-4">Our Customer / Client list</h2>
             <p class="text-gray-400 max-w-2xl mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <div class="flex flex-wrap justify-center gap-8 items-center py-8 border-2 border-borderorange rounded-lg bg-gray-800">
                 <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">Radiant Pharmaceutical Ltd</a>
@@ -398,8 +455,29 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="py-16 lg:py-24 bg-gray-200 text-gray-800 border-b border-borderorange">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-10">FAQ</h2>
+            <div class="space-y-4" x-data="{ openFaq: null }">
+                <div class="bg-white rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-5 py-4 text-left font-semibold text-gray-800 flex justify-between items-center">What products do you supply? <span x-text="openFaq === 1 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 1" x-transition class="px-5 pb-4 text-gray-600 text-sm">We supply machinery, primary packaging, dairy products, feed and food raw materials, chemicals for textile industry, excipients, herbals, pharmaceutical raw materials and intermediates. Add your content.</div>
+                </div>
+                <div class="bg-white rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-5 py-4 text-left font-semibold text-gray-800 flex justify-between items-center">How can I contact you? <span x-text="openFaq === 2 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 2" x-transition class="px-5 pb-4 text-gray-600 text-sm">Use the Contact Us form or call/email from the address in the footer. Add your content.</div>
+                </div>
+                <div class="bg-white rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-5 py-4 text-left font-semibold text-gray-800 flex justify-between items-center">Do you offer samples? <span x-text="openFaq === 3 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 3" x-transition class="px-5 pb-4 text-gray-600 text-sm">Yes. Add your content here.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Latest Blog -->
-    <section class="py-16 lg:py-24 bg-gray-200 text-gray-800 border-b border-borderorange">
+    <section id="blog" class="py-16 lg:py-24 bg-gray-200 text-gray-800 border-b border-borderorange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
                 <div>
@@ -441,6 +519,32 @@
         </div>
     </section>
 
+    <!-- Contact Us: Query/Feedback form + Google Map -->
+    <section id="contact" class="py-16 lg:py-20 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-10">Contact Us</h2>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-10">Send your query or feedback. We will get back to you shortly.</p>
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h3 class="text-xl font-bold text-fglight mb-4">Customer Query / Feedback</h3>
+                    <form class="space-y-4">
+                        <div><label class="block text-sm text-gray-400 mb-1">Name *</label><input type="text" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></div>
+                        <div><label class="block text-sm text-gray-400 mb-1">Email *</label><input type="email" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></div>
+                        <div><label class="block text-sm text-gray-400 mb-1">Subject</label><input type="text" class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></div>
+                        <div><label class="block text-sm text-gray-400 mb-1">Message / Feedback *</label><textarea rows="4" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></textarea></div>
+                        <button type="submit" class="w-full bg-sky text-white py-2.5 rounded font-semibold hover:bg-sky-600">Send</button>
+                    </form>
+                </div>
+                <div class="rounded-lg border-2 border-borderorange overflow-hidden bg-gray-800">
+                    <h3 class="text-xl font-bold text-fglight p-4 border-b border-gray-600">Find us on Map</h3>
+                    <div class="aspect-video bg-gray-700">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.245981656!2d90.40537431498102!3d23.781555884593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70b72f1b8b1%3A0xac87b96b3d3d3a3!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1635000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Office location map"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pre-footer -->
     <section class="py-10 bg-darkest border-b border-borderorange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -449,7 +553,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-darkest text-fglight border-t border-borderorange">
+    <footer class="bg-darkest text-fglight border-t border-borderorange">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-3 gap-10">
                 <div>
@@ -467,18 +571,18 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Newsletter</h3>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Subscribe to our Newsletter</h3>
+                    <p class="text-gray-400 text-xs mb-2">Stay updated. Enter your email below.</p>
                     <div class="flex gap-0">
-                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-l text-gray-800 text-sm border-2 border-borderorange">
-                        <button class="w-12 h-[42px] rounded-r bg-sky flex items-center justify-center text-white hover:bg-sky-600">→</button>
+                        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-2.5 rounded-l text-gray-800 text-sm border-2 border-borderorange" aria-label="Email for newsletter">
+                        <button type="button" class="w-12 h-[42px] rounded-r bg-sky flex items-center justify-center text-white hover:bg-sky-600">→</button>
                     </div>
                     <h3 class="font-semibold uppercase text-sm tracking-wider mt-6 mb-3 text-fglight">We're social, connect with us:</h3>
-                    <div class="flex gap-2">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">f</a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">𝕏</a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">in</a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">G+</a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">P</a>
+                    <div class="flex gap-2 flex-wrap">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Facebook">f</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Twitter">𝕏</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Google+">G+</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="YouTube">▶</a>
                     </div>
                 </div>
             </div>
