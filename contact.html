@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Windmark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkest: '#1a1a1a',
+              sky: { DEFAULT: '#0ea5e9', 600: '#0284c7' },
+              borderorange: '#ea580c',
+              fglight: '#e5e7eb',
+            }
+          }
+        }
+      }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Poppins', sans-serif; }
+      .sakura-pattern-dark { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4zm-8 12l-3 1 1 3-3-1 1-3 3 1zm20 0l3 1-1 3 3-1-1-3-3 1zM20 35l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4 0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4zm20 0l2 2-2 2c-1 1-1 3-1 4 0 2 1 4 3 4s3-2 3-4c0-1 0-3-1-4l-2-2 2-2c1-1 1-3 1-4 0-2-1-4-3-4s-3 2-3 4c0 1 0 3 1 4z' fill='%23e5e7eb' fill-opacity='0.06'/%3E%3C/svg%3E"); }
+    </style>
+</head>
+<body class="antialiased text-gray-800 bg-darkest text-fglight" x-data="{ quoteOpen: false, mobileMenu: false }">
+    <!-- Top bar -->
+    <div class="bg-darkest text-gray-400 text-center text-sm py-1.5 border-b border-borderorange sakura-pattern-dark">
+        www.windmark.com &gt; Contact Us
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 flex border-b border-borderorange bg-darkest sakura-pattern-dark">
+        <div class="w-full lg:w-1/2 flex items-center pl-6 lg:pl-12 py-4 lg:py-5">
+            <a href="index.html" class="flex items-center">
+                <img src="public/logo.png" alt="Windmark" class="h-10 lg:h-12 w-auto object-contain">
+            </a>
+        </div>
+        <div class="hidden lg:flex lg:w-1/2 items-center justify-end pr-6 gap-5 py-4">
+            <a href="index.html" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Home</a>
+            <a href="index.html#products" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Product/Service</a>
+            <a href="index.html#blog" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
+            <a href="index.html#faq" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
+            <a href="index.html#about" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Pages</a>
+            <a href="index.html#gallery" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Images/Video Gallery</a>
+            <a href="contact.html" class="whitespace-nowrap text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
+            <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded text-sm font-medium hover:bg-sky-600">Request a Quote</button>
+        </div>
+        <button @click="mobileMenu = !mobileMenu" class="lg:hidden ml-auto p-4 text-fglight">☰</button>
+    </header>
+    <div x-show="mobileMenu" x-transition class="lg:hidden bg-darkest border-b border-borderorange py-4 px-6 space-y-1 sakura-pattern-dark">
+        <a href="index.html" class="whitespace-nowrap block py-2 text-gray-300">Home</a>
+        <a href="index.html#products" class="whitespace-nowrap block py-2 text-gray-300">Product/Service</a>
+        <a href="index.html#blog" class="whitespace-nowrap block py-2 text-gray-300">Blog</a>
+        <a href="index.html#faq" class="whitespace-nowrap block py-2 text-gray-300">FAQ</a>
+        <a href="index.html#about" class="whitespace-nowrap block py-2 text-gray-300">Pages</a>
+        <a href="index.html#gallery" class="whitespace-nowrap block py-2 text-gray-300">Images/Video Gallery</a>
+        <a href="contact.html" class="whitespace-nowrap block py-2 text-sky">Contact Us</a>
+        <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded mt-2">Request a Quote</button>
+    </div>
+
+    <!-- Contact Us main -->
+    <main class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-4">Contact Us</h1>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">Send your query or feedback. We will get back to you shortly.</p>
+
+            <!-- Address / contact info strip -->
+            <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 mb-10">
+                <h2 class="text-xl font-bold text-fglight mb-4">Address &amp; Contact</h2>
+                <ul class="text-gray-400 space-y-2">
+                    <li><span class="text-fglight font-medium">Address:</span> House # 79, Block # M (Sikder Plaza), Chairman Bari, Banani, Dhaka-1213, Bangladesh</li>
+                    <li><span class="text-fglight font-medium">Phone:</span> <a href="tel:+8801558257778" class="hover:text-sky">+88 015 58 257778</a></li>
+                    <li><span class="text-fglight font-medium">Email:</span> <a href="mailto:info@windmark.com" class="hover:text-sky">info@windmark.com</a></li>
+                </ul>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <h2 class="text-xl font-bold text-fglight mb-4">Customer Query / Feedback</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Name *</label>
+                            <input type="text" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Email *</label>
+                            <input type="email" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Subject</label>
+                            <input type="text" class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Message / Feedback *</label>
+                            <textarea rows="4" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-sky text-white py-2.5 rounded font-semibold hover:bg-sky-600">Send</button>
+                    </form>
+                </div>
+                <div class="rounded-lg border-2 border-borderorange overflow-hidden bg-gray-800">
+                    <h2 class="text-xl font-bold text-fglight p-4 border-b border-gray-600">Find us on Map</h2>
+                    <div class="aspect-video bg-gray-700">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.245981656!2d90.40537431498102!3d23.781555884593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70b72f1b8b1%3A0xac87b96b3d3d3a3!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1635000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Office location map"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darkest text-fglight border-t border-borderorange mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <a href="index.html" class="inline-block mb-4">
+                        <img src="public/logo.png" alt="Windmark" class="h-8 w-auto object-contain">
+                    </a>
+                    <p class="text-gray-400 text-sm">Formed as the global pharmaceutical service & manufacturing platform of International Chemical Investors Group in 2006, CordenPharma is your full-service partner in the Contract Development & Manufacturing (CDMO) of APIs, Drug Products, and associated Packaging Services.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Address</h3>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>House # 79, Block # M (Sikder Plaza), Chairman Bari, Banani, Dhaka-1213, Bangladesh</li>
+                        <li>+88 015 58 257778</li>
+                        <li>info@windmark.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Subscribe to our Newsletter</h3>
+                    <p class="text-gray-400 text-xs mb-2">Stay updated. Enter your email below.</p>
+                    <div class="flex gap-0">
+                        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-2.5 rounded-l text-gray-800 text-sm border-2 border-borderorange" aria-label="Email for newsletter">
+                        <button type="button" class="w-12 h-[42px] rounded-r bg-sky flex items-center justify-center text-white hover:bg-sky-600">→</button>
+                    </div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mt-6 mb-3 text-fglight">We're social, connect with us:</h3>
+                    <div class="flex gap-2 flex-wrap">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Facebook">f</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Twitter">𝕏</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="Google+">G+</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-borderorange py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+                COPYRIGHT © 2019. All Rights Reserved By Windmark Design & Developed by <a href="https://srsit.com.bd/" target="_blank" class="font-bold text-gray-400 hover:text-gray-500">SRS IT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Request a Quote modal -->
+    <div x-show="quoteOpen" x-cloak x-transition class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50" @keydown.escape.window="quoteOpen = false">
+        <div @click.outside="quoteOpen = false" class="bg-gray-100 rounded-lg shadow-xl max-w-md w-full p-6 relative border-2 border-borderorange">
+            <button @click="quoteOpen = false" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl leading-none">×</button>
+            <h2 class="text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-borderorange">Request a Quote</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky text-gray-800">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky text-gray-800">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea rows="4" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky text-gray-800"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-sky text-white py-2.5 rounded font-semibold hover:bg-sky-600">Submit</button>
+            </form>
+        </div>
+    </div>
+    <style>[x-cloak] { display: none !important; }</style>
+</body>
+</html>
