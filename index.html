@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chem Expertz Ltd. | Leading Specialty Chemicals Distributor in Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkest: '#1a1a1a',
+              sky: { DEFAULT: '#0ea5e9', 600: '#0284c7' },
+              borderorange: '#ea580c',
+              fglight: '#e5e7eb',
+            }
+          }
+        }
+      }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="antialiased bg-darkest text-fglight" x-data="{ quoteOpen: false, mobileMenu: false }">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-darkest shadow-md border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center gap-1">
+                    <span class="text-xl font-bold text-fglight">Chem</span>
+                    <span class="text-xl font-bold text-sky">Expertz</span>
+                    <span class="w-2 h-2 rounded-full bg-borderorange"></span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="text-gray-300 hover:text-sky transition">Home</a>
+                    <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <button class="text-gray-300 hover:text-sky transition">Product/Service</button>
+                        <div x-show="open" x-transition class="absolute top-full left-0 mt-1 w-56 bg-darkest shadow-lg rounded py-2 border border-borderorange">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Machinery</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Primary Packaging</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Pharmaceutical Raw Materials</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Intermediates</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Excipients</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-gray-300 hover:text-sky transition">Blog</a>
+                    <a href="#" class="text-gray-300 hover:text-sky transition">FAQ</a>
+                    <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <button class="text-gray-300 hover:text-sky transition">Pages</button>
+                        <div x-show="open" x-transition class="absolute top-full left-0 mt-1 w-40 bg-darkest shadow-lg rounded py-2 border border-borderorange">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Privacy & Policy</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">About Us</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-gray-300 hover:text-sky transition">Contact Us</a>
+                </nav>
+                <div class="hidden lg:block">
+                    <button @click="quoteOpen = true" class="bg-sky text-white px-5 py-2.5 rounded font-medium hover:bg-sky-600 transition">Request a Quote</button>
+                </div>
+                <button @click="mobileMenu = !mobileMenu" class="lg:hidden p-2 text-fglight">☰</button>
+            </div>
+            <div x-show="mobileMenu" x-transition class="lg:hidden py-4 border-t border-borderorange">
+                <a href="#" class="block py-2 text-gray-300">Home</a>
+                <a href="#" class="block py-2 text-gray-300">Product/Service</a>
+                <a href="#" class="block py-2 text-gray-300">Blog</a>
+                <a href="#" class="block py-2 text-gray-300">FAQ</a>
+                <a href="#" class="block py-2 text-gray-300">Pages</a>
+                <a href="#" class="block py-2 text-gray-300">Contact Us</a>
+                <button @click="quoteOpen = true" class="mt-2 bg-sky text-white px-4 py-2 rounded">Request a Quote</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-darkest border-b border-borderorange">
+        <div class="absolute inset-0 opacity-20" aria-hidden="true">
+            <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="hexagons" x="0" y="0" width="56" height="98" patternUnits="userSpaceOnUse">
+                        <path d="M28 0L56 14v28L28 56 0 42V14L28 0z" fill="none" stroke="#e5e7eb" stroke-width="1.5" opacity="0.5"/>
+                        <path d="M28 49L56 63v28L28 105 0 91V63L28 49z" fill="none" stroke="#e5e7eb" stroke-width="1.5" opacity="0.3"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#hexagons)"/>
+            </svg>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 py-16">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-fglight mb-6">Introducing "Chem Expertz Ltd., Bangladesh"</h1>
+            <a href="#intro" class="inline-block bg-sky text-white px-8 py-3 rounded font-semibold hover:bg-sky-600 transition">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Sub-feature cards (6) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Pharmaceutical Raw Materials</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Intermediates</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Excipients</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Animal Health Products</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Herbals</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+            <a href="#" class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 flex flex-col hover:border-sky transition group">
+                <svg class="w-10 h-10 text-sky mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <h3 class="font-semibold text-fglight mb-2">Primary Packaging</h3>
+                <div class="mt-auto flex justify-end"><span class="w-10 h-10 rounded-full bg-sky flex items-center justify-center text-white group-hover:bg-sky-600">→</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Company intro (SINCE 2010) -->
+    <section id="intro" class="py-16 lg:py-24 bg-darkest border-y border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="aspect-[4/3] bg-gray-800 rounded-lg border border-borderorange"></div>
+                    <div class="aspect-[4/3] bg-gray-700 rounded-lg border border-borderorange mt-4"></div>
+                    <div class="aspect-[4/3] bg-gray-700 rounded-lg border border-borderorange -mt-4"></div>
+                    <div class="aspect-[4/3] bg-gray-800 rounded-lg border border-borderorange"></div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Since 2010</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-fglight mb-6">Introducing "Chem Expertz Ltd., Bangladesh"</h2>
+                    <p class="text-gray-400 leading-relaxed">Welcome to our new Customers, Principals and colleagues. Our personnel are technical experts with extensive market knowledge and a passion for innovation. Our approach to doing business is entrepreneurial, dynamic and flexible. We place partnership with customers and principals at the heart of activities and aims to provide effective, sustainable and reliable solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APIs section -->
+    <section class="py-16 lg:py-24 bg-darkest text-fglight relative overflow-hidden border-b border-borderorange">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200');"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-fglight">ACTIVE PHARMACEUTICAL INGREDIENTS (APIs)</h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">ChemExpertz's vertically-integrated supply chain model provides development & manufacturing expertise spanning the complete cGMP supply chain — from regulated raw materials through intermediates, APIs, commercial-scale Drug Product manufacturing, finished dosage formulation, packaging, clinical trial services, & pharma logistics — resulting in reduced development & manufacturing time and cost.</p>
+                    <button @click="quoteOpen = true" class="bg-sky text-white px-6 py-3 rounded font-semibold hover:bg-sky-600 transition">Get a quote</button>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gray-800 rounded-lg p-6 text-center border-2 border-borderorange">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full border-2 border-borderorange flex items-center justify-center text-2xl text-sky">◆</div>
+                        <p class="font-medium text-fglight">Itraconazole Pellets</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center border-2 border-borderorange">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full border-2 border-borderorange flex items-center justify-center text-2xl text-sky">◆</div>
+                        <p class="font-medium text-fglight">Pheniramine Maleate</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center border-2 border-borderorange">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full border-2 border-borderorange flex items-center justify-center text-2xl text-sky">◆</div>
+                        <p class="font-medium text-fglight">Povidone Iodine</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center border-2 border-borderorange">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full border-2 border-borderorange flex items-center justify-center text-2xl text-sky">◆</div>
+                        <p class="font-medium text-fglight">Omeprazole Sodium Sterile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We bring the best things + stats + 6 service cards -->
+    <section class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">THE BEST SERVICES</p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight mt-2 mb-4">We bring the best things</h2>
+            <p class="text-gray-400 max-w-3xl mb-12">Chem Expertz Ltd. aims to exceed your expectation at every possible opportunity. From our first, prompt response to your initial inquiry through technical support, product testing and development. Our global sampling service will give you the opportunity to evaluate products quality before place us order. We are committed to best quality with competitive price and prompt services. We believe you will come as a customer; go as a friend.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="text-center">
+                    <p class="text-3xl lg:text-4xl font-bold text-sky">10</p>
+                    <p class="text-gray-400 text-sm mt-1">Winning Awards</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl lg:text-4xl font-bold text-sky">1230</p>
+                    <p class="text-gray-400 text-sm mt-1">Satisfied Clients</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl lg:text-4xl font-bold text-sky">360</p>
+                    <p class="text-gray-400 text-sm mt-1">Best Projects</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl lg:text-4xl font-bold text-sky">15+</p>
+                    <p class="text-gray-400 text-sm mt-1">Years Served</p>
+                </div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">♔</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">▣</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">📈</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">▾</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">◐</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6"><div class="w-12 h-12 rounded bg-gray-700 border border-borderorange mb-4 flex items-center justify-center text-sky text-xl">◈</div><h3 class="font-semibold text-fglight mb-2">Financial Analysis</h3><p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Our Awesome Team -->
+    <section class="py-16 bg-darkest text-fglight text-center border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-6">Contact Our Awesome Team</h2>
+            <a href="#contact" class="inline-block bg-sky text-white px-8 py-3 rounded font-semibold hover:bg-sky-600 transition">Contact Now</a>
+        </div>
+    </section>
+
+    <!-- Our Customer -->
+    <section class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Case studies</p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight mt-2 mb-4">Our Customer</h2>
+            <p class="text-gray-400 max-w-2xl mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex flex-wrap justify-center gap-8 items-center py-8 border-2 border-borderorange rounded-lg bg-gray-800">
+                <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">Radiant Pharmaceutical Ltd</a>
+                <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">Popular Pharmaceutical Ltd</a>
+                <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">SK+F Pharmaceutical Ltd</a>
+                <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">Square Pharmaceutical Ltd</a>
+                <a href="#" class="px-6 py-4 bg-gray-800 rounded border border-borderorange text-fglight font-medium hover:border-sky">Beximco Pharmaceuticals Ltd.</a>
+            </div>
+            <div class="flex justify-center gap-2 mt-4">
+                <button class="w-2.5 h-2.5 rounded-full bg-sky" aria-label="Slide 1"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-gray-600" aria-label="Slide 2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video presentation -->
+    <section class="py-16 lg:py-24 bg-darkest text-fglight border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Our Video Presentation</h2>
+                    <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed posuere ipsum. Nunc eget sagittis nunc. Nunc ac aliquet ante. Morbi congue semper justo. Quisque sed pulvinar nisl. Maecenas nec consequat sapien.</p>
+                </div>
+                <div class="relative aspect-video bg-gray-800 rounded-lg overflow-hidden flex items-center justify-center border-2 border-borderorange">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800');"></div>
+                    <button class="relative z-10 w-20 h-20 rounded-full bg-sky flex items-center justify-center text-white hover:bg-sky-600 transition">▶</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 lg:py-24 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Testimonial</p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-fglight mt-2 mb-4">Customer Reviews</h2>
+            <p class="text-gray-400 max-w-2xl mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <p class="text-gray-400 mb-6">That conviction is where the process of change really begins—with the realization that just because a certain abuse has taken place in the past doesn't mean that we have to tolerate it.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 border border-borderorange"></div>
+                        <div>
+                            <p class="font-semibold text-fglight">Jhon Smith</p>
+                            <p class="text-sm text-gray-400">CEO & Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <p class="text-gray-400 mb-6">That conviction is where the process of change really begins—with the realization that just because a certain abuse has taken place in the past doesn't mean that we have to tolerate it.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 border border-borderorange"></div>
+                        <div>
+                            <p class="font-semibold text-fglight">Jhon Smith</p>
+                            <p class="text-sm text-gray-400">CEO & Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
+                    <p class="text-gray-400 mb-6">That conviction is where the process of change really begins—with the realization that just because a certain abuse has taken place in the past doesn't mean that we have to tolerate it.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-600 border border-borderorange"></div>
+                        <div>
+                            <p class="font-semibold text-fglight">Jhon Smith</p>
+                            <p class="text-sm text-gray-400">CEO & Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-2 mt-8">
+                <button class="w-2.5 h-2.5 rounded-full bg-sky"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-gray-600"></button>
+                <button class="w-2.5 h-2.5 rounded-full bg-gray-600"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog -->
+    <section class="py-16 lg:py-24 bg-gray-200 text-gray-800 border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+                <div>
+                    <p class="text-sm font-semibold text-gray-600 uppercase tracking-wider">Latest Blog</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mt-2">Lorem Ipsum Dolor</h2>
+                </div>
+                <button @click="quoteOpen = true" class="text-sky font-semibold border-b-2 border-sky hover:text-sky-600">Request a Quote</button>
+            </div>
+            <p class="text-gray-600 max-w-2xl mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-fglight rounded-lg overflow-hidden border-2 border-borderorange">
+                    <div class="aspect-video bg-gray-400"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-gray-800 mb-2">How to design effective arts?</h3>
+                        <p class="text-sm text-gray-600 mb-2">03 Jan, 2019 · 238 views</p>
+                        <p class="text-gray-600 text-sm mb-4">The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not-quite-tuned-in radio</p>
+                        <a href="#" class="inline-block bg-sky text-white text-sm px-4 py-2 rounded font-medium hover:bg-sky-600">Read More</a>
+                    </div>
+                </article>
+                <article class="bg-fglight rounded-lg overflow-hidden border-2 border-borderorange">
+                    <div class="aspect-video bg-gray-400"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-gray-800 mb-2">How to design effective arts?</h3>
+                        <p class="text-sm text-gray-600 mb-2">03 Jan, 2019 · 200 views</p>
+                        <p class="text-gray-600 text-sm mb-4">The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not-quite-tuned-in radio</p>
+                        <a href="#" class="inline-block bg-sky text-white text-sm px-4 py-2 rounded font-medium hover:bg-sky-600">Read More</a>
+                    </div>
+                </article>
+                <article class="bg-fglight rounded-lg overflow-hidden border-2 border-borderorange">
+                    <div class="aspect-video bg-gray-400"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-gray-800 mb-2">How to design effective arts?</h3>
+                        <p class="text-sm text-gray-600 mb-2">03 Aug, 2018 · 174 views</p>
+                        <p class="text-gray-600 text-sm mb-4">The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not-quite-tuned-in radio</p>
+                        <a href="#" class="inline-block bg-sky text-white text-sm px-4 py-2 rounded font-medium hover:bg-sky-600">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-footer -->
+    <section class="py-10 bg-darkest border-b border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-gray-400 text-center max-w-3xl mx-auto">Formed as the global pharmaceutical service & manufacturing platform of International Chemical Investors Group in 2006, CordenPharma is your full-service partner in the Contract Development & Manufacturing (CDMO) of APIs, Drug Products, and associated Packaging Services.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-darkest text-fglight border-t border-borderorange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div>
+                    <a href="#" class="inline-flex items-center gap-1 mb-4">
+                        <span class="font-bold text-fglight">Chem</span>
+                        <span class="font-bold text-sky">Expertz</span>
+                        <span class="w-2 h-2 rounded-full bg-borderorange"></span>
+                    </a>
+                    <p class="text-gray-400 text-sm">Formed as the global pharmaceutical service & manufacturing platform of International Chemical Investors Group in 2006, CordenPharma is your full-service partner in the Contract Development & Manufacturing (CDMO) of APIs, Drug Products, and associated Packaging Services.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Address</h3>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>House # 79, Block # M (Sikder Plaza), Chairman Bari, Banani, Dhaka-1213, Bangladesh</li>
+                        <li>+88 015 58 257778</li>
+                        <li>info@chemexpertz.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mb-4 text-fglight">Newsletter</h3>
+                    <div class="flex gap-0">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-l text-gray-800 text-sm border-2 border-borderorange">
+                        <button class="w-12 h-[42px] rounded-r bg-sky flex items-center justify-center text-white hover:bg-sky-600">→</button>
+                    </div>
+                    <h3 class="font-semibold uppercase text-sm tracking-wider mt-6 mb-3 text-fglight">We're social, connect with us:</h3>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">f</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">𝕏</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">in</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">G+</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 border border-borderorange flex items-center justify-center text-white hover:bg-sky">P</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-borderorange py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+                COPYRIGHT © 2019. All Rights Reserved By ChemExpertz Design & Developed by Data Host IT
+            </div>
+        </div>
+    </footer>
+
+    <!-- Request a Quote modal -->
+    <div x-show="quoteOpen" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50" @keydown.escape.window="quoteOpen = false">
+        <div @click.outside="quoteOpen = false" class="bg-fglight rounded-lg shadow-xl max-w-md w-full p-6 relative border-2 border-borderorange">
+            <button @click="quoteOpen = false" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl leading-none">×</button>
+            <h2 class="text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-borderorange">Request a Quote</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea rows="4" class="w-full px-3 py-2 border-2 border-borderorange rounded focus:ring-2 focus:ring-sky focus:border-sky"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-sky text-white py-2.5 rounded font-semibold hover:bg-sky-600">Submit</button>
+            </form>
+        </div>
+    </div>
+    <style>[x-cloak] { display: none !important; }</style>
+</body>
+</html>
