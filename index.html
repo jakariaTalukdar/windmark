@@ -62,7 +62,7 @@
                 </div>
             </div>
             <a href="#" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
-            <a href="#" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
+            <a href="faq.html" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                 <button class="whitespace-nowrap flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
                     Pages
@@ -101,7 +101,7 @@
             </div>
         </div>
         <a href="#blog" class="whitespace-nowrap block py-2 text-gray-300">Blog</a>
-        <a href="#faq" class="whitespace-nowrap block py-2 text-gray-300">FAQ</a>
+        <a href="faq.html" class="whitespace-nowrap block py-2 text-gray-300">FAQ</a>
         <div x-data="{ pagesOpen: false }">
             <button @click="pagesOpen = !pagesOpen" class="whitespace-nowrap flex items-center justify-between w-full py-2 text-gray-300">Pages <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="pagesOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
             <div x-show="pagesOpen" x-cloak x-transition class="pl-3 border-l-2 border-borderorange space-y-0.5">

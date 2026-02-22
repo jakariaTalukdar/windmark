@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Windmark</title>
+    <title>FAQ | Windmark</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,7 +14,7 @@
               sky: { DEFAULT: '#0ea5e9', 600: '#0284c7' },
               borderorange: '#ea580c',
               fglight: '#e5e7eb',
-            }gi
+            }
           }
         }
       }
@@ -25,13 +25,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       body { font-family: 'Poppins', sans-serif; }
-      .sakura-pattern-dark { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4zm-8 12l-3 1 1 3-3-1 1-3 3 1zm20 0l3 1-1 3 3-1-1-3-3 1zM20 35l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4 0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4zm20 0l2 2-2 2c-1 1-1 3-1 4 0 2 1 4 3 4s3-2 3-4c0-1 0-3-1-4l-2-2 2-2c1-1 1-3 1-4 0-2-1-4-3-4s-3 2-3 4c0 1 0 3 1 4z' fill='%23e5e7eb' fill-opacity='0.06'/%3E%3C/svg%3E"); }
+      .sakura-pattern-dark { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c0-2 1-4 3-4s3 2 3 4c0 1 0 3-1 4l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4zm-8 12l-3 1 1 3-3-1 1-3 3 1zm20 0l3 1-1 3 3-1-1-3-3 1zM20 35l-2 2 2 2c1 1 1 3 1 4 0 2-1 4-3 4s-3-2-3-4c0-1 0-3 1-4l2-2-2-2c-1-1-1-3-1-4 0-2 1-4 3-4s3 2 3 4c0 1 0 3 1 4zm20 0l2 2-2 2c-1 1-1 3-1 4 0 2 1 4 3 4s3-2 3-4c0-1 0-3-1-4l-2-2 2-2c1-1 1-3 1-4 0-2-1-4-3-4s-3 2-3 4c0 1 0 3 1 4z' fill='%23e5e7eb' fill-opacity='0.06'/%3E%3C/svg%3E"); }
     </style>
 </head>
 <body class="antialiased text-gray-800 bg-darkest text-fglight" x-data="{ quoteOpen: false, mobileMenu: false }">
     <!-- Top bar -->
     <div class="bg-darkest text-gray-400 text-center text-sm py-1.5 border-b border-borderorange sakura-pattern-dark">
-        www.windmark.com &gt; Contact Us
+        www.windmark.com &gt; FAQ
     </div>
 
     <!-- Header -->
@@ -45,10 +45,10 @@
             <a href="index.html" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Home</a>
             <a href="index.html#products" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Product/Service</a>
             <a href="index.html#blog" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
-            <a href="faq.html" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
+            <a href="faq.html" class="whitespace-nowrap text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
             <a href="index.html#about" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Pages</a>
             <a href="index.html#gallery" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Images/Video Gallery</a>
-            <a href="contact.html" class="whitespace-nowrap text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
+            <a href="contact.html" class="whitespace-nowrap text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
             <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded text-sm font-medium hover:bg-sky-600">Request a Quote</button>
         </div>
         <button @click="mobileMenu = !mobileMenu" class="lg:hidden ml-auto p-4 text-fglight">☰</button>
@@ -57,57 +57,29 @@
         <a href="index.html" class="whitespace-nowrap block py-2 text-gray-300">Home</a>
         <a href="index.html#products" class="whitespace-nowrap block py-2 text-gray-300">Product/Service</a>
         <a href="index.html#blog" class="whitespace-nowrap block py-2 text-gray-300">Blog</a>
-        <a href="faq.html" class="whitespace-nowrap block py-2 text-gray-300">FAQ</a>
+        <a href="faq.html" class="whitespace-nowrap block py-2 text-sky">FAQ</a>
         <a href="index.html#about" class="whitespace-nowrap block py-2 text-gray-300">Pages</a>
         <a href="index.html#gallery" class="whitespace-nowrap block py-2 text-gray-300">Images/Video Gallery</a>
-        <a href="contact.html" class="whitespace-nowrap block py-2 text-sky">Contact Us</a>
+        <a href="contact.html" class="whitespace-nowrap block py-2 text-gray-300">Contact Us</a>
         <button @click="quoteOpen = true" class="whitespace-nowrap bg-sky text-white px-4 py-2 rounded mt-2">Request a Quote</button>
     </div>
 
-    <!-- Contact Us main -->
+    <!-- FAQ main -->
     <main class="py-16 lg:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-4">Contact Us</h1>
-            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">Send your query or feedback. We will get back to you shortly.</p>
-
-            <!-- Address / contact info strip -->
-            <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6 mb-10">
-                <h2 class="text-xl font-bold text-fglight mb-4">Address &amp; Contact</h2>
-                <ul class="text-gray-400 space-y-2">
-                    <li><span class="text-fglight font-medium">Address:</span> House # 79, Block # M (Sikder Plaza), Chairman Bari, Banani, Dhaka-1213, Bangladesh</li>
-                    <li><span class="text-fglight font-medium">Phone:</span> <a href="tel:+8801558257778" class="hover:text-sky">+88 015 58 257778</a></li>
-                    <li><span class="text-fglight font-medium">Email:</span> <a href="mailto:info@windmark.com" class="hover:text-sky">info@windmark.com</a></li>
-                </ul>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-10">
-                <div class="bg-gray-800 rounded-lg border-2 border-borderorange p-6">
-                    <h2 class="text-xl font-bold text-fglight mb-4">Customer Query / Feedback</h2>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-1">Name *</label>
-                            <input type="text" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-1">Email *</label>
-                            <input type="email" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-1">Subject</label>
-                            <input type="text" class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky">
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-400 mb-1">Message / Feedback *</label>
-                            <textarea rows="4" required class="w-full px-3 py-2 rounded bg-gray-700 border border-gray-600 text-fglight focus:ring-2 focus:ring-sky focus:border-sky"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-sky text-white py-2.5 rounded font-semibold hover:bg-sky-600">Send</button>
-                    </form>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl lg:text-4xl font-bold text-fglight text-center mb-10">FAQ</h1>
+            <div class="space-y-4" x-data="{ openFaq: null }">
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-5 py-4 text-left font-semibold text-fglight flex justify-between items-center hover:bg-gray-700/50 transition">What products do you supply? <span class="text-sky text-lg" x-text="openFaq === 1 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 1" x-cloak x-transition class="px-5 pb-4 text-gray-400 text-sm border-t border-gray-600">We supply machinery, primary packaging, dairy products, feed and food raw materials, chemicals for textile industry, excipients, herbals, pharmaceutical raw materials and intermediates. Add your content.</div>
                 </div>
-                <div class="rounded-lg border-2 border-borderorange overflow-hidden bg-gray-800">
-                    <h2 class="text-xl font-bold text-fglight p-4 border-b border-gray-600">Find us on Map</h2>
-                    <div class="aspect-video bg-gray-700">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.245981656!2d90.40537431498102!3d23.781555884593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70b72f1b8b1%3A0xac87b96b3d3d3a3!2sBanani%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1635000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Office location map"></iframe>
-                    </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-5 py-4 text-left font-semibold text-fglight flex justify-between items-center hover:bg-gray-700/50 transition">How can I contact you? <span class="text-sky text-lg" x-text="openFaq === 2 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 2" x-cloak x-transition class="px-5 pb-4 text-gray-400 text-sm border-t border-gray-600">Use the <a href="contact.html" class="text-sky hover:underline">Contact Us</a> form or call/email from the address in the footer. Add your content.</div>
+                </div>
+                <div class="bg-gray-800 rounded-lg border-2 border-borderorange overflow-hidden">
+                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-5 py-4 text-left font-semibold text-fglight flex justify-between items-center hover:bg-gray-700/50 transition">Do you offer samples? <span class="text-sky text-lg" x-text="openFaq === 3 ? '−' : '+'"></span></button>
+                    <div x-show="openFaq === 3" x-cloak x-transition class="px-5 pb-4 text-gray-400 text-sm border-t border-gray-600">Yes. Add your content here.</div>
                 </div>
             </div>
         </div>
