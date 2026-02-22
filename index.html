@@ -40,12 +40,14 @@
             <a href="#" class="flex items-center">
                 <img src="/public/logo.png" alt="Windmark" class="h-10 lg:h-12 w-auto object-contain">
             </a>
-            <p class="hidden sm:block text-gray-700 text-sm ml-4 border-l border-gray-500 pl-4">Windmark</p>
         </div>
         <div class="hidden lg:flex lg:w-1/2 bg-darkest sakura-pattern-dark items-center justify-end pr-8 gap-6 py-4">
             <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Home</a>
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Product/Service</button>
+                <button class="flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
+                    Product/Service
+                    <svg class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
                 <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-72 bg-white shadow-lg rounded py-3 border border-borderorange z-50 max-h-[80vh] overflow-y-auto">
                     <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Machinery</a>
                     <a href="#" class="block px-4 py-2 text-sm font-medium text-borderorange hover:bg-orange-50">Primary Packaging</a>
@@ -69,10 +71,13 @@
             <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Blog</a>
             <a href="#" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">FAQ</a>
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                <button class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Pages</button>
-                <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-40 bg-darkest shadow-lg rounded py-2 border border-borderorange z-50">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">Privacy & Policy</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800">About Us</a>
+                <button class="flex items-center gap-1 text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">
+                    Pages
+                    <svg class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div x-show="open" x-transition class="absolute top-full right-0 mt-1 w-52 bg-white shadow-lg rounded py-0 border border-borderorange border-t-2 border-t-borderorange z-50">
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50">» Privacy & Policy</a>
+                    <a href="#" class="block px-4 py-3 text-sm font-medium text-borderorange hover:bg-orange-50 border-t border-gray-200">» About Us</a>
                 </div>
             </div>
             <a href="#contact" class="text-gray-300 hover:text-sky font-medium uppercase text-sm tracking-wider">Contact Us</a>
@@ -83,7 +88,7 @@
     <div x-show="mobileMenu" x-transition class="lg:hidden bg-gray-200 border-b border-borderorange py-4 px-6 space-y-1" x-data="{ productOpen: false }">
         <a href="#" class="block py-2 text-gray-700">Home</a>
         <div>
-            <button @click="productOpen = !productOpen" class="flex items-center justify-between w-full py-2 text-gray-700">Product/Service <span x-text="productOpen ? '−' : '+'"></span></button>
+            <button @click="productOpen = !productOpen" class="flex items-center justify-between w-full py-2 text-gray-700">Product/Service <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="productOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
             <div x-show="productOpen" x-transition class="pl-3 border-l-2 border-borderorange space-y-0.5">
                 <a href="#" class="block py-1.5 text-gray-700">Machinery</a>
                 <a href="#" class="block py-1.5 text-gray-700">Primary Packaging</a>
@@ -106,7 +111,13 @@
         </div>
         <a href="#" class="block py-2 text-gray-700">Blog</a>
         <a href="#" class="block py-2 text-gray-700">FAQ</a>
-        <a href="#" class="block py-2 text-gray-700">Pages</a>
+        <div x-data="{ pagesOpen: false }">
+            <button @click="pagesOpen = !pagesOpen" class="flex items-center justify-between w-full py-2 text-gray-700">Pages <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 transition-transform" :class="pagesOpen && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div x-show="pagesOpen" x-transition class="pl-3 border-l-2 border-borderorange space-y-0.5">
+                <a href="#" class="block py-1.5 text-gray-700">» Privacy & Policy</a>
+                <a href="#" class="block py-1.5 text-gray-700">» About Us</a>
+            </div>
+        </div>
         <a href="#contact" class="block py-2 text-gray-700">Contact Us</a>
         <button @click="quoteOpen = true" class="bg-sky text-white px-4 py-2 rounded mt-2">Request a Quote</button>
     </div>
